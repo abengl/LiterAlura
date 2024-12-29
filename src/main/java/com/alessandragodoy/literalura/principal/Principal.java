@@ -7,10 +7,10 @@ import com.alessandragodoy.literalura.service.ConvierteDatos;
 import java.util.Scanner;
 
 public class Principal {
-	private Scanner input = new Scanner(System.in);
-	private ConsumoAPI consumoAPI = new ConsumoAPI();
-	private ConvierteDatos conversor = new ConvierteDatos();
-	private final String URL = "https://gutendex.com/books/";
+	private final Scanner input = new Scanner(System.in);
+	private final ConsumoAPI consumoAPI = new ConsumoAPI();
+	private final ConvierteDatos conversor = new ConvierteDatos();
+	private static final String URL = "https://gutendex.com/books/";
 
 	public void testing() {
 		var json = consumoAPI.obtenerDatos(URL + "?search=pride%20and%20prejudice");
@@ -27,7 +27,7 @@ public class Principal {
 		System.out.println("******** Literalura ********");
 		System.out.println("Elige una opción a través de su número: ");
 		var opcion = -1;
-		while(opcion != 0) {
+		while (opcion != 0) {
 			var menu = """
 					1 - Buscar libro por título
 					2 - Listar libros registrados
