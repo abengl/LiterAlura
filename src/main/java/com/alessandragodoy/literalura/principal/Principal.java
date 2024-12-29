@@ -4,6 +4,7 @@ import com.alessandragodoy.literalura.model.Datos;
 import com.alessandragodoy.literalura.service.ConsumoAPI;
 import com.alessandragodoy.literalura.service.ConvierteDatos;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Principal {
@@ -24,8 +25,8 @@ public class Principal {
 	}
 
 	public void muestraElMenu() {
-		System.out.println("******** Literalura ********");
-		System.out.println("Elige una opción a través de su número: ");
+		System.out.println("\n--------------- Literalura ---------------");
+		System.out.println(">>> Escribe el número de la opción a realizar: ");
 		var opcion = -1;
 		while (opcion != 0) {
 			var menu = """
@@ -37,8 +38,15 @@ public class Principal {
 					0 - Salir
 					""";
 			System.out.println(menu);
-			opcion = input.nextInt();
-			input.nextLine();
+
+			try {
+				opcion = input.nextInt();
+				input.nextLine();
+			} catch (InputMismatchException e) {
+				System.out.println(">>> Ingrese un número válido.\n");
+				input.nextLine();
+				continue;
+			}
 
 			switch (opcion) {
 				case 1:
@@ -57,10 +65,10 @@ public class Principal {
 					listarLibroPorIdioma();
 					break;
 				case 0:
-					System.out.println("Cerrando LiterAlura... ¡Adiós!");
+					System.out.println(">>> Cerrando LiterAlura... ¡Adiós!\n");
 					break;
 				default:
-					System.out.println("Opción inválida");
+					System.out.println(">>> Opción inválida.\n");
 			}
 
 		}
