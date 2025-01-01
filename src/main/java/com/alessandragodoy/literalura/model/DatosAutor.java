@@ -9,8 +9,8 @@ public record DatosAutor(
 		@JsonAlias("birth_year") String fechaDeNacimiento,
 		@JsonAlias("death_year") String fechaDeFallecimiento
 ) {
-	@Override
-	public String toString() {
-		return nombre + " (" + fechaDeNacimiento + " - " + fechaDeFallecimiento + ")";
-	}
+//	@Override
+//	public String toString() {
+//		return nombre + " (" + fechaDeNacimiento + " - " + fechaDeFallecimiento + ")";
+//	}
 }
