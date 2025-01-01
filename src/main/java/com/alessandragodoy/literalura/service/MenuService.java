@@ -1,5 +1,6 @@
 package com.alessandragodoy.literalura.service;
 
+import com.alessandragodoy.literalura.exception.RecursoNoEncontradoException;
 import com.alessandragodoy.literalura.model.dto.Datos;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -78,14 +79,23 @@ public class MenuService {
 	}
 
 	private void listarAutoresVivosPorPeriodo(Scanner input) {
-		System.out.println(">>> Ingrese el año: ");
-		var year = input.nextInt();
-		libroService.listarAutoresVivosEnPeriodo(year).forEach(System.out::println);
+		try {
+			System.out.println(">>> Ingrese el año: ");
+			var periodo = input.nextInt();
+			input.nextLine();
+			libroService.listarAutoresVivosEnPeriodo(periodo).forEach(System.out::println);
+		} catch (RecursoNoEncontradoException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	private void listarLibroPorIdioma(Scanner input) {
-		System.out.println(">>> Ingrese el idioma: ");
-		var idioma = input.nextLine();
-		libroService.listarLibrosPorIdioma(idioma).forEach(System.out::println);
+		try {
+			System.out.println(">>> Ingrese el idioma: ");
+			var idioma = input.nextLine();
+			libroService.listarLibrosPorIdioma(idioma).forEach(System.out::println);
+		} catch (RecursoNoEncontradoException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }

@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Service class for managing books and authors.
@@ -47,12 +48,18 @@ public class LibroService {
 	}
 
 	public List<Autor> listarAutoresVivosEnPeriodo(int periodo) {
-		return autorRepository.findAutoresVivosPorPeriodo(periodo).orElseThrow(() -> new RecursoNoEncontradoException(
-				" >>> No se encontraron autores registrados en ese periodo."));
+		Optional<List<Autor>> autores = autorRepository.findAutoresVivosPorPeriodo(periodo);
+		if (autores.get().isEmpty()) {
+			throw new RecursoNoEncontradoException(">>> No se encontraron autores registrados en ese periodo.");
+		}
+		return autores.get();
 	}
 
 	public List<Libro> listarLibrosPorIdioma(String idioma) {
-		return libroRepository.findByIdiomaIgnoreCase(idioma).orElseThrow(
-				() -> new RecursoNoEncontradoException(">>> No se encontraron libros registrados para ese idioma."));
+		Optional<List<Libro>> libros = libroRepository.findByIdiomaIgnoreCase(idioma);
+		if (libros.get().isEmpty()) {
+			throw new RecursoNoEncontradoException(">>> No se encontraron libros registrados para ese idioma.");
+		}
+		return libros.get();
 	}
 }
