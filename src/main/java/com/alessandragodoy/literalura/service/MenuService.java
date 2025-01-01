@@ -91,7 +91,7 @@ public class MenuService {
 
 	private void listarLibroPorIdioma(Scanner input) {
 		try {
-			System.out.println(">>> Ingrese el idioma: ");
+			System.out.println(">>> Ingrese el idioma: (en - inglés | es - español");
 			var idioma = input.nextLine();
 			libroService.listarLibrosPorIdioma(idioma).forEach(System.out::println);
 		} catch (RecursoNoEncontradoException e) {
