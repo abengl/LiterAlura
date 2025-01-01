@@ -16,8 +16,11 @@
 <div align="center" padding="20">
 <img src="src/main/resources/images/background.jpeg" alt="animation background of a library" height="250px" >
 </div>
-<b>LiterAlura</b> es una aplicación de terminal que permite buscar y gestionar información sobre libros utilizando la 
-API [Gutendex](https://gutendex.com/) y almacena los datos obtenidos en una base de datos PostgreSQL. El sistema ofrece un menú interactivo para realizar diversas operaciones relacionadas con libros y autores.
+<b>LiterAlura</b> es una aplicación de terminal que permite buscar y gestionar información sobre libros utilizando 
+la <span>API <a href="https://gutendex.com/">Gutendex</a></span> y almacena los datos obtenidos en una base de datos 
+PostgreSQL. El 
+sistema 
+ofrece un menú interactivo para realizar diversas operaciones relacionadas con libros y autores.
 
 ### Características Principales:
 - Menú interactivo para realizar diversas consultas y operaciones.
