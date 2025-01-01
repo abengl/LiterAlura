@@ -16,7 +16,8 @@
 <div align="center" padding="20">
 <img src="src/main/resources/images/background.jpeg" alt="animation background of a library" height="250px" >
 </div>
-**LiterAlura** es una aplicación de terminal que permite buscar y gestionar información sobre libros utilizando la API [Gutendex](https://gutendex.com/) y almacena los datos obtenidos en una base de datos PostgreSQL. El sistema ofrece un menú interactivo para realizar diversas operaciones relacionadas con libros y autores.
+<b>LiterAlura</b> es una aplicación de terminal que permite buscar y gestionar información sobre libros utilizando la 
+API [Gutendex](https://gutendex.com/) y almacena los datos obtenidos en una base de datos PostgreSQL. El sistema ofrece un menú interactivo para realizar diversas operaciones relacionadas con libros y autores.
 
 ### Características Principales:
 - Menú interactivo para realizar diversas consultas y operaciones.
@@ -53,7 +54,7 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 
 1. Clona el repositorio e instala las dependencias:
    ```bash
-   git clone https://github.com/tu-repositorio/literalura.git
+   git clone https://github.com/abengl/LiterAlura.git
    cd literalura
    mvn install
    ```
@@ -86,8 +87,7 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 ## Ejemplos
 
 ### 1. Buscar libro por título:
-La aplicación pedirá el título del libro y buscará los resultados en la API de Gutendex. Los resultados se procesan 
-y se muestran en la terminal:
+La aplicación pedirá el título del libro, buscará, almacenará y mostrará el primer resultado:
 <img src="src/main/resources/images/opcion1.png" alt="opcion 1 del menu de busqueda de literalura" height="250px">
 <img src="src/main/resources/images/opcion1-error.png" alt="opcion 1 del menu de busqueda de literalura" height="250px">
 
@@ -97,8 +97,7 @@ Muestra todos los libros almacenados en la base de datos local (opción 2) y los
 <img src="src/main/resources/images/opcion3.png" alt="opcion 3 del menu de busqueda de literalura" height="250px">
 
 ### 3. Listar autores vivos en un determinado año:
-La aplicación pedirá un año y mostrará todos los autores que estaban vivos en ese periodo o un mensaje si no hay 
-datos de autores en ese periodo:
+La aplicación pedirá un año y mostrará todos los autores que estaban vivos en ese periodo:
 <img src="src/main/resources/images/opcion4.png" alt="opcion 4 del menu de busqueda de literalura" height="250px">
 <img src="src/main/resources/images/opcion4-error.png" alt="opcion 4 del menu de busqueda de literalura" 
 height="250px">
