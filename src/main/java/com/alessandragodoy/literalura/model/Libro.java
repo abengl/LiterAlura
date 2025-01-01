@@ -1,10 +1,14 @@
 package com.alessandragodoy.literalura.model;
 
+import com.alessandragodoy.literalura.model.dto.DatosLibro;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Represents a book entity with details such as title, language, number of downloads, and author.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
@@ -30,7 +34,6 @@ public class Libro {
 		this.idioma = (!libro.idiomas().isEmpty() ? libro.idiomas().get(0) : "Desconocido");
 		this.numeroDeDescargas = libro.numeroDeDescargas();
 	}
-
 
 	@Override
 	public String toString() {

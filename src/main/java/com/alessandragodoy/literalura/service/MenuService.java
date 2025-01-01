@@ -1,12 +1,15 @@
 package com.alessandragodoy.literalura.service;
 
-import com.alessandragodoy.literalura.model.Datos;
+import com.alessandragodoy.literalura.model.dto.Datos;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Service class for displaying and managing the menu options.
+ */
 @RequiredArgsConstructor
 @Service
 public class MenuService {
@@ -65,6 +68,7 @@ public class MenuService {
 
 		libroService.buscarLibroPorTitulo(libros);
 	}
+
 	private void listarLibrosRegistrados() {
 		libroService.listarLibros().forEach(System.out::println);
 	}

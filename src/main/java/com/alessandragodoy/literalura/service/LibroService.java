@@ -2,8 +2,8 @@ package com.alessandragodoy.literalura.service;
 
 import com.alessandragodoy.literalura.exception.RecursoNoEncontradoException;
 import com.alessandragodoy.literalura.model.Autor;
-import com.alessandragodoy.literalura.model.Datos;
 import com.alessandragodoy.literalura.model.Libro;
+import com.alessandragodoy.literalura.model.dto.Datos;
 import com.alessandragodoy.literalura.repository.AutorRepository;
 import com.alessandragodoy.literalura.repository.LibroRepository;
 import jakarta.transaction.Transactional;
@@ -11,8 +11,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
+/**
+ * Service class for managing books and authors.
+ */
 @Service
 @RequiredArgsConstructor
 public class LibroService {
@@ -50,6 +52,7 @@ public class LibroService {
 	}
 
 	public List<Libro> listarLibrosPorIdioma(String idioma) {
-		return libroRepository.findByIdiomaIgnoreCase(idioma).orElseThrow(() -> new RecursoNoEncontradoException(">>> No se encontraron libros registrados para ese idioma."));
+		return libroRepository.findByIdiomaIgnoreCase(idioma).orElseThrow(
+				() -> new RecursoNoEncontradoException(">>> No se encontraron libros registrados para ese idioma."));
 	}
 }

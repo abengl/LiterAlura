@@ -1,14 +1,14 @@
 package com.alessandragodoy.literalura.model;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.alessandragodoy.literalura.model.dto.DatosAutor;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
+/**
+ * Represents an author with their personal details.
+ */
 
 @Getter
 @Setter
