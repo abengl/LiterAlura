@@ -1,24 +1,18 @@
-package com.alessandragodoy.literalura.model;
+package com.alessandragodoy.literalura.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
+/**
+ * Represents the data structure for a book.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record DatosLibro(
 		@JsonAlias("title") String titulo,
-		@JsonAlias("authors")List<DatosAutor> autor,
+		@JsonAlias("authors")List<DatosAutor> autores,
 		@JsonAlias("languages") List<String> idiomas,
 		@JsonAlias("download_count") Double numeroDeDescargas
 		) {
-
-	@Override
-	public String toString() {
-		return "\n--- DatosLibro --- " +
-				"\nTitulo: '" + titulo + '\'' +
-				"\nAutor: " + autor.toString() +
-				"\nIdiomas:" + idiomas +
-				"\nDescargas: " + numeroDeDescargas + "\n";
-	}
 }

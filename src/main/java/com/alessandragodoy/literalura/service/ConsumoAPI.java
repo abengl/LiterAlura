@@ -8,6 +8,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+/**
+ * This class is responsible for consuming APIs and retrieving data as a String.
+ */
 public class ConsumoAPI {
 	public String obtenerDatos(String url) {
 		HttpClient client = HttpClient.newHttpClient();
